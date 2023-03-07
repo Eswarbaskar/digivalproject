@@ -9,7 +9,7 @@ function Tableviwe(props) {
             <div className='text-end m-3'>
                 <Link to={'/add'} className="btn btn-success" type="submit">ADDQUSI</Link>
             </div>
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">S.no</th>

@@ -9,7 +9,7 @@ import {
   Route,
 } from "react-router-dom";
 import Tableviwe from './Tableviwe';
-import UserProvider from './Usercontext';
+import {UserProvider} from './Usercontext';
 import { useState } from 'react';
 
 function App() {

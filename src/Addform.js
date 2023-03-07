@@ -1,11 +1,13 @@
 import React,{useContext} from 'react'
 import { useFormik } from 'formik';
 import UserContext from './Usercontext';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 function Addform(props) {
+    const navigate = useNavigate()
     const data = useContext(UserContext)
     const formik = useFormik({
         initialValues: {
@@ -15,7 +17,8 @@ function Addform(props) {
         },
        
         onSubmit:async (values) => {
-          data.setUsers([...data.user,values])
+          data.setUser([...data.user,values])
+          navigate('/')
         
         },
     })
@@ -38,7 +41,7 @@ function Addform(props) {
                     value={formik.values.qustion}
                     />
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
                     <label for="Answer" className="form-label">Answer</label>
                     <input type="text" className="form-control" id="answer"
                     name='answer'
