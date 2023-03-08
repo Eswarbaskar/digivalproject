@@ -2,7 +2,7 @@ import React,{useContext,useEffect} from 'react'
 import { useParams,useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import UserContext from '../Usercontext';
-import { isContentEditable } from '@testing-library/user-event/dist/utils';
+
 
 function Editform() {
   let params = useParams()
@@ -23,7 +23,7 @@ function Editform() {
           }
           return item
         }))
-        console.log(data?.user);
+        
         navigate('/')
       
       },
