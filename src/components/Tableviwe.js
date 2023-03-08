@@ -1,9 +1,13 @@
 import React,{useContext} from 'react'
 import { Link } from 'react-router-dom'
-import UserContext from './Usercontext'
+import UserContext from '../Usercontext'
 
 function Tableviwe(props) {
     const data = useContext(UserContext)
+
+    const handleDelete=(index)=>()=>{
+        data.setUser(state=>state.slice(index,0))
+    }
     return (
         <div>
             <div className='text-end m-3'>
@@ -31,11 +35,11 @@ function Tableviwe(props) {
                         data.user.map((item, i) => {
                             return (
                                 <tr key={i}>
-                                    <th>{1 + i}</th>
+                                    <th>{2 + i}</th>
                                     <td>{item.topic}</td>
                                     <td>
-                                        <button className='btn btn-success m-1'>EDIT</button>
-                                        <button className='btn btn-danger'>DELETE</button>
+                                        <Link to={`/edit/${i}`}className='btn btn-success m-1'>EDIT</Link>
+                                        <button onClick={handleDelete(i)} className='btn btn-danger'>DELETE</button>
                                     </td>
 
                                 </tr>
